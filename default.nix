@@ -1,13 +1,12 @@
-{ pkgs, ... }:
+_:
 
 {
-  imports = [ ./plugins ];
+  imports = [
+    ./config
+    ./plugins
+  ];
 
   config = {
-    colorschemes = import ./config/colorscheme.nix;
-    keymaps = import ./config/keymaps.nix;
-    opts = import ./config/options.nix;
-
     # Needed for telescope live grep
     extraPackages = [ pkgs.ripgrep ];
 

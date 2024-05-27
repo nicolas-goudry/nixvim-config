@@ -1,13 +1,14 @@
-# Use catppuccin mocha variant
 {
-  catppuccin = {
-    enable = true;
+  colorschemes = {
+    catppuccin = {
+      enable = true;
 
-    settings = {
-      flavour = "mocha";
+      settings = {
+        flavour = "mocha";
 
-      # Needed to keep terminal transparency, if any
-      transparent_background = true;
+        # Needed to keep terminal transparency, if any
+        transparent_background = true;
+      };
     };
   };
 }

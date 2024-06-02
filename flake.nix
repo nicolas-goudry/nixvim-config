@@ -58,6 +58,7 @@
                 inherit pkgs;
 
                 libn = nixvim.lib.${system};
+                icons = import ./utils/icons.nix;
               };
             };
         in

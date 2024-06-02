@@ -1,6 +1,6 @@
 # homepage: https://github.com/nvim-neo-tree/neo-tree.nvim
 # nixvim doc: https://nix-community.github.io/nixvim/plugins/neo-tree/index.html
-_:
+{ icons, ... }:
 
 {
   opts = {
@@ -143,15 +143,15 @@ _:
 
     defaultComponentConfigs = {
       gitStatus.symbols = {
-        added = "";
-        conflict = "";
-        deleted = "";
-        ignored = "◌";
-        modified = "";
-        renamed = "";
-        staged = "";
-        unstaged = "";
-        untracked = "★";
+        added = icons.GitAdd;
+        conflict = icons.GitConflict;
+        deleted = icons.GitDelete;
+        ignored = icons.GitIgnored;
+        modified = icons.GitChange;
+        renamed = icons.GitRenamed;
+        staged = icons.GitStaged;
+        unstaged = icons.GitUnstaged;
+        untracked = icons.GitUntracked;
       };
     };
 
@@ -177,15 +177,15 @@ _:
       # Sources to show and their labels
       sources = [
         {
-          displayName = " Files";
+          displayName = "${icons.FolderClosed} Files";
           source = "filesystem";
         }
         {
-          displayName = "󰈙 Bufs";
+          displayName = "${icons.DefaultFile} Bufs";
           source = "buffers";
         }
         {
-          displayName = "󰊢 Git";
+          displayName = "${icons.Git} Git";
           source = "git_status";
         }
       ];

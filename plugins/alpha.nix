@@ -1,6 +1,6 @@
 # homepage: https://github.com/goolord/alpha-nvim
 # nixvim doc: https://nix-community.github.io/nixvim/plugins/alpha/index.html
-{ libn, pkgs, ... }:
+{ icons, libn, pkgs, ... }:
 
 let
   header = {
@@ -30,11 +30,11 @@ let
 
     # Use function defined in lua config (see below) to generate buttons
     val = [
-      { __raw = "alpha_button('LDR n  ', '  New File')"; }
-      { __raw = "alpha_button('LDR e  ', '  Explorer')"; }
-      { __raw = "alpha_button('LDR f f', '  Find File')"; }
-      { __raw = "alpha_button('LDR f o', '󰈙  Recents')"; }
-      { __raw = "alpha_button('LDR f g', '󰈭  Live Grep')"; }
+      { __raw = "alpha_button('LDR n  ', '${icons.FileNew}  New File')"; }
+      { __raw = "alpha_button('LDR e  ', '${icons.FolderOpen}  Explorer')"; }
+      { __raw = "alpha_button('LDR f f', '${icons.Search}  Find File')"; }
+      { __raw = "alpha_button('LDR f o', '${icons.DefaultFile}  Recents')"; }
+      { __raw = "alpha_button('LDR f g', '${icons.WordFile}  Live Grep')"; }
     ];
   };
 

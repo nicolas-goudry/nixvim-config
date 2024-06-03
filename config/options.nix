@@ -3,6 +3,9 @@
 # Use :h <option> to load help for given <option>
 {
   opts = {
+    # Keep visual indentation on wrapped lines
+    breakindent = true;
+
     # Hide command line unless needed
     cmdheight = 0;
 

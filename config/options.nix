@@ -66,7 +66,7 @@
     #showtabline = 2;
 
     # Show signs instead of number in gutter
-    signcolumn = "number";
+    signcolumn = "yes";
 
     # Override ignorecase if search pattern contains uppercase characters
     smartcase = true;

@@ -34,20 +34,7 @@
   rootOpts.keymaps = [
     {
       key = "<leader>ua";
-
-      # https://github.com/AstroNvim/astrocore/blob/v1.4.0/lua/astrocore/toggles.lua#L37-L50
-      action.__raw = ''
-        function()
-          local ok, autopairs = pcall(require, "nvim-autopairs")
-          if ok then
-            if autopairs.state.disabled then
-              autopairs.enable()
-            else
-              autopairs.disable()
-            end
-          end
-        end
-      '';
+      action.__raw = "function() require('astrocore.toggles').autopairs() end";
       options.desc = "Toggle autopairs";
     }
   ];

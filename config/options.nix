@@ -36,6 +36,9 @@
     # Infer casing on word completion
     infercase = true;
 
+    # Global statusline
+    laststatus = 3;
+
     # Enable list mode
     list = true;
 

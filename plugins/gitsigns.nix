@@ -1,3 +1,5 @@
+# homepage: https://github.com/lewis6991/gitsigns.nvim
+# nixvim doc: https://nix-community.github.io/nixvim/plugins/gitsigns/index.html
 { icons, ... }:
 
 {
@@ -5,11 +7,13 @@
     enable = true;
 
     settings = {
+      # Show line blame with custom text
       current_line_blame = true;
       current_line_blame_formatter = " <author>, <author_time:%R> – <summary>";
       current_line_blame_formatter_nc = " Uncommitted";
       current_line_blame_opts.ignore_whitespace = true;
 
+      # Use same icon for all signs (only color matters)
       signs = {
         add.text = icons.GitSign;
         change.text = icons.GitSign;
@@ -26,6 +30,7 @@
     # https://github.com/catppuccin/nvim/blob/main/lua/catppuccin/groups/integrations/gitsigns.lua
     colorschemes.catppuccin.settings.integrations.gitsigns = true;
 
+    # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/gitsigns.lua#L9-L21
     keymaps = [
       {
         key = "]g";

@@ -1,3 +1,4 @@
+# homepage: https://github.com/NMAC427/guess-indent.nvim
 { pkgs, ... }:
 
 {

@@ -9,6 +9,8 @@
       event = "BufRead";
       group = "large_buffer_detector";
 
+      # Disable LSP, TS, syntax and some settings on large buffers
+      # Note: large_buf is set by astrocore plugin
       callback.__raw = ''
         function(args)
           if vim.b.large_buf then

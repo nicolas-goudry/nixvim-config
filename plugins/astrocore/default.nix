@@ -1,3 +1,4 @@
+# homepage: https://github.com/AstroNvim/astrocore
 { lib, pkgs, ... }:
 
 {

@@ -68,7 +68,7 @@
     # Always show tabline (TODO: use with heirline?)
     #showtabline = 2;
 
-    # Show signs instead of number in gutter
+    # Show signs column
     signcolumn = "yes";
 
     # Override ignorecase if search pattern contains uppercase characters

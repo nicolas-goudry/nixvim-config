@@ -57,7 +57,6 @@
               extraSpecialArgs = specialArgs // {
                 inherit pkgs;
 
-                libn = nixvim.lib.${system};
                 icons = import ./utils/icons.nix;
               };
             };

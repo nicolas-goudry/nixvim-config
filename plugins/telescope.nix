@@ -1,6 +1,6 @@
 # homepage: https://github.com/nvim-telescope/telescope.nvim
 # nixvim doc: https://nix-community.github.io/nixvim/plugins/telescope/index.html
-{ libn, pkgs, ... }:
+{ helpers, pkgs, ... }:
 
 {
   opts = {
@@ -61,7 +61,7 @@
           }: {
             inherit key mode;
 
-            action.__raw = "function() TelescopeWithTheme('${fn}', ${libn.helpers.toLuaObject args}) end";
+            action.__raw = "function() TelescopeWithTheme('${fn}', ${helpers.toLuaObject args}) end";
             options = { inherit desc; };
           };
       in

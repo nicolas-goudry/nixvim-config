@@ -1,6 +1,6 @@
 # homepage: https://github.com/goolord/alpha-nvim
 # nixvim doc: https://nix-community.github.io/nixvim/plugins/alpha/index.html
-{ icons, libn, pkgs, ... }:
+{ helpers, icons, pkgs, ... }:
 
 let
   header = {
@@ -115,7 +115,7 @@ in
       end
 
       require("alpha").setup({
-        layout = ${libn.helpers.toLuaObject layout},
+        layout = ${helpers.toLuaObject layout},
       })
     '';
   };

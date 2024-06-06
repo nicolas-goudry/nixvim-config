@@ -68,8 +68,8 @@
     # Number of spaces to use for indentation
     shiftwidth = 2;
 
-    # Always show tabline (TODO: use with heirline?)
-    #showtabline = 2;
+    # Always show tabline
+    showtabline = 2;
 
     # Show signs column
     signcolumn = "yes";

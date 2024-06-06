@@ -7,6 +7,7 @@
       (import ./package { inherit lib pkgs; })
     ];
 
+    # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astroui_status.lua
     config = ''
       local sign_handlers = {}
       -- gitsigns handlers

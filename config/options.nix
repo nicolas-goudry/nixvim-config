@@ -39,6 +39,9 @@
     # Global statusline
     laststatus = 3;
 
+    # Wrap lines at 'breakat'
+    linebreak = true;
+
     # Enable list mode
     list = true;
 
@@ -67,6 +70,9 @@
 
     # Number of spaces to use for indentation
     shiftwidth = 2;
+
+    # Disable showing modes in command line
+    showmode = false;
 
     # Always show tabline
     showtabline = 2;

@@ -20,8 +20,8 @@
     # auto_quit
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L18-L46
     {
-      event = "BufEnter";
       desc = "Quit neovim if more than one window is open and only sidebar windows are list";
+      event = "BufEnter";
       group = "auto_quit";
 
       callback.__raw = ''
@@ -56,8 +56,8 @@
     # autoview
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L49-L70
     {
-      event = [ "BufWinLeave" "BufWritePost" "WinLeave" ];
       desc = "Save view with mkview for real files";
+      event = [ "BufWinLeave" "BufWritePost" "WinLeave" ];
       group = "autoview";
 
       callback.__raw = ''
@@ -67,8 +67,8 @@
       '';
     }
     {
-      event = "BufWinEnter";
       desc = "Try to load file view if available and enable view saving for real files";
+      event = "BufWinEnter";
       group = "autoview";
 
       callback.__raw = ''
@@ -89,8 +89,8 @@
     # bufferline
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L73-L115
     {
-      event = [ "BufAdd" "BufEnter" "TabNewEntered" ];
       desc = "Update buffers when adding new buffers";
+      event = [ "BufAdd" "BufEnter" "TabNewEntered" ];
       group = "bufferline";
 
       callback.__raw = ''
@@ -113,8 +113,8 @@
       '';
     }
     {
-      event = [ "BufDelete" "TermClose" ];
       desc = "Update buffers when deleting buffers";
+      event = [ "BufDelete" "TermClose" ];
       group = "bufferline";
 
       callback.__raw = ''
@@ -143,8 +143,8 @@
     # checktime
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L118-L122
     {
-      event = [ "FocusGained" "TermClose" "TermLeave" ];
       desc = "Check if buffers changed on editor focus";
+      event = [ "FocusGained" "TermClose" "TermLeave" ];
       group = "checktime";
       command = "checktime";
     }
@@ -152,8 +152,8 @@
     # create_dir
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L125-L132
     {
-      event = "BufWritePre";
       desc = "Automatically create parent directories if they don't exist when saving a file";
+      event = "BufWritePre";
       group = "create_dir";
 
       callback.__raw = ''
@@ -167,8 +167,8 @@
     # editorconfig_filetype
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L135-L144
     {
-      event = "FileType";
       desc = "Configure editorconfig after filetype detection to override `ftplugin`s";
+      event = "FileType";
       group = "editorconfig_filetype";
 
       callback.__raw = ''
@@ -184,8 +184,8 @@
     # file_user_events
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L147-L177
     {
-      event = [ "BufReadPost" "BufNewFile" "BufWritePost" ];
       desc = "Astro user events for file detection (AstroFile and AstroGitFile)";
+      event = [ "BufReadPost" "BufNewFile" "BufWritePost" ];
       group = "file_user_events";
 
       callback.__raw = ''
@@ -222,8 +222,8 @@
     # highlighturl
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L180-L203
     {
-      event = [ "VimEnter" "FileType" "BufEnter" "WinEnter" ];
       desc = "URL Highlighting";
+      event = [ "VimEnter" "FileType" "BufEnter" "WinEnter" ];
       group = "highlighturl";
 
       callback.__raw = ''
@@ -241,8 +241,8 @@
       '';
     }
     {
-      event = [ "VimEnter" "User" ];
       desc = "Set up the default HighlightURL highlight group";
+      event = [ "VimEnter" "User" ];
       group = "highlighturl";
 
       callback.__raw = ''
@@ -257,8 +257,8 @@
     # highlightyank
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L206-L211
     {
-      event = "TextYankPost";
       desc = "Highlight yanked text";
+      event = "TextYankPost";
       group = "highlightyank";
       pattern = "*";
 
@@ -274,8 +274,8 @@
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L214-L239
     # https://www.reddit.com/r/neovim/comments/z85s1l/comment/iyfrgvb/
     {
-      event = "User";
       desc = "Disable certain functionality on very large files";
+      event = "User";
       group = "large_buf_settings";
       pattern = "AstroLargeBuf";
 
@@ -327,8 +327,8 @@
     # q_close_windows
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L242-L255
     {
-      event = "BufWinEnter";
       desc = "Make q close help, man, quickfix, dap floats";
+      event = "BufWinEnter";
       group = "q_close_windows";
 
       callback.__raw = ''
@@ -348,8 +348,8 @@
     # terminal_settings
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L258-L266
     {
-      event = "TermOpen";
       desc = "Disable line number/fold column/sign column for terminals";
+      event = "TermOpen";
       group = "terminal_settings";
 
       callback.__raw = ''
@@ -365,8 +365,8 @@
     # unlist_quickfix
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L270-L275
     {
-      event = "FileType";
       desc = "Unlist quickfix buffers";
+      event = "FileType";
       group = "unlist_quickfix";
       pattern = "qf";
 

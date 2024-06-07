@@ -168,7 +168,7 @@
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L135-L144
     {
       event = "FileType";
-      desc = "configure editorconfig after filetype detection to override `ftplugin`s";
+      desc = "Configure editorconfig after filetype detection to override `ftplugin`s";
       group = "editorconfig_filetype";
 
       callback.__raw = ''
@@ -185,7 +185,7 @@
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L147-L177
     {
       event = [ "BufReadPost" "BufNewFile" "BufWritePost" ];
-      desc = "AstroNvim user events for file detection (AstroFile and AstroGitFile)";
+      desc = "Astro user events for file detection (AstroFile and AstroGitFile)";
       group = "file_user_events";
 
       callback.__raw = ''
@@ -270,7 +270,9 @@
     }
 
     # large_buf_settings
+    # https://github.com/AstroNvim/astrocore/blob/v1.5.0/lua/astrocore/init.lua#L473-L486
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_autocmds.lua#L214-L239
+    # https://www.reddit.com/r/neovim/comments/z85s1l/comment/iyfrgvb/
     {
       event = "User";
       desc = "Disable certain functionality on very large files";
@@ -281,10 +283,12 @@
         function(args)
           vim.opt_local.wrap = true -- enable wrap, long lines in vim are slow
           vim.opt_local.list = false -- disable list chars
+
           vim.b[args.buf].autoformat = false -- disable autoformat on save
           vim.b[args.buf].cmp_enabled = false -- disable completion
           vim.b[args.buf].miniindentscope_disable = true -- disable indent scope
           vim.b[args.buf].matchup_matchparen_enabled = 0 -- disable vim-matchup
+
           local astrocore = require "astrocore"
           if vim.tbl_get(astrocore.config, "features", "highlighturl") then
             astrocore.config.features.highlighturl = false
@@ -292,12 +296,30 @@
               if vim.w[win].highlighturl_enabled then astrocore.delete_url_match(win) end
             end, vim.api.nvim_list_wins())
           end
+
           local ibl_avail, ibl = pcall(require, "ibl") -- disable indent-blankline
           if ibl_avail then ibl.setup_buffer(args.buf, { enabled = false }) end
+
           local illuminate_avail, illuminate = pcall(require, "illuminate.engine") -- disable vim-illuminate
           if illuminate_avail then illuminate.stop_buf(args.buf) end
+
           local rainbow_avail, rainbow = pcall(require, "rainbow-delimiters") -- disable rainbow-delimiters
           if rainbow_avail then rainbow.disable(args.buf) end
+
+          --[[
+            Custom additions
+          ]]--
+          local ts_avail, ts = pcall(require, "nvim-treesitter.configs") -- disable treesitter
+          if ts_avail then
+            for _, module in ipairs(ts.available_modules()) do
+              vim.cmd(("TSBufDisable %s"):format(module))
+            end
+          end
+
+          vim.opt_local.foldmethod = "manual"
+          vim.opt_local.spell = false
+          vim.cmd("syntax off")
+          vim.cmd("LspStop")
         end
       '';
     }

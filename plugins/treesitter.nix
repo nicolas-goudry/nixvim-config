@@ -1,6 +1,6 @@
 # homepage: https://github.com/nvim-treesitter/nvim-treesitter
 # nixvim doc: https://nix-community.github.io/nixvim/plugins/treesitter/index.html
-_:
+{ lib, ... }:
 
 {
   opts = {
@@ -10,9 +10,13 @@ _:
     # Enable treesitter based indentation (use '=' to auto-indent)
     indent = true;
 
-    # Enable incremental selection
-    # Keymaps are defined as global nixvim keymaps
-    incrementalSelection.enable = true;
+    # Workaround to enable incremental selection without setting default keymaps (keymaps are set globally)
+    # This is needed in order to set custom descriptions and avoid to have multiple keymaps
+    # See https://github.com/nix-community/nixvim/issues/1506
+    moduleConfig.incremental_selection = {
+      enable = true;
+      keymaps = lib.mkForce { };
+    };
   };
 
   rootOpts = {
@@ -33,31 +37,29 @@ _:
         action.__raw = "function() require('nvim-treesitter.textobjects.repeatable_move').repeat_last_move_opposite() end";
         options.desc = "Repeat last move in the opposite direction";
       }
-      # Workaround for setting descriptions to treesitter incremental selection keymaps
-      # See https://github.com/nix-community/nixvim/issues/1506
       {
         mode = "n";
         key = "<leader>ss";
         action.__raw = "function() require('nvim-treesitter.incremental_selection').init_selection() end";
-        options.desc = "Start incremental selection";
+        options.desc = "Start";
       }
       {
         mode = "v";
         key = "<leader>sd";
         action.__raw = "function() require('nvim-treesitter.incremental_selection').node_decremental() end";
-        options.desc = "Decrement selection";
+        options.desc = "Decrement";
       }
       {
         mode = "v";
         key = "<leader>si";
         action.__raw = "function() require('nvim-treesitter.incremental_selection').node_incremental() end";
-        options.desc = "Increment selection by node";
+        options.desc = "Increment node";
       }
       {
         mode = "v";
         key = "<leader>sc";
         action.__raw = "function() require('nvim-treesitter.incremental_selection').scope_incremental() end";
-        options.desc = "Increment selection by scope";
+        options.desc = "Increment scope";
       }
     ];
 

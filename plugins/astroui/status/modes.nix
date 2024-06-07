@@ -3,7 +3,6 @@
   # Forced to use raw Lua value to avoid Nix transforming special chars to unicode sequence
   __raw = ''
     {
-      --findme
       ["n"] = { "NORMAL", "normal" },
       ["no"] = { "OP", "normal" },
       ["nov"] = { "OP", "normal" },

@@ -1,8 +1,7 @@
 # homepage: https://github.com/AstroNvim/astroui
-{ helpers, lib, pkgs, ... }:
+{ helpers, icons, lib, pkgs, ... }:
 
 let
-  icons = import ./icons.nix;
   status = import ./status;
 in
 {

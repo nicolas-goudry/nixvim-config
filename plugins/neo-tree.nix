@@ -202,7 +202,20 @@
     autoGroups.neotree = { };
 
     # Custom autocommands (taken from AstroNvim)
-    autoCmd = [
+    autoCmd =
+      let
+        refresh = ''
+          function()
+            local manager_avail, manager = pcall(require, "neo-tree.sources.manager")
+            if manager_avail then
+              for _, source in ipairs { "filesystem", "git_status", "document_symbols" } do
+                local module = "neo-tree.sources." .. source
+                if package.loaded[module] then manager.refresh(require(module).name) end
+              end
+            end
+          end
+        '';
+      in[
       # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/neo-tree.lua#L21-L37
       {
         desc = "Open explorer on startup with directory";
@@ -228,18 +241,13 @@
         event = "TermClose";
         group = "neotree";
         pattern = "*lazygit*";
-
-        callback.__raw = ''
-          function()
-            local manager_avail, manager = pcall(require, "neo-tree.sources.manager")
-            if manager_avail then
-              for _, source in ipairs { "filesystem", "git_status", "document_symbols" } do
-                local module = "neo-tree.sources." .. source
-                if package.loaded[module] then manager.refresh(require(module).name) end
-              end
-            end
-          end
-        '';
+        callback.__raw = refresh;
+      }
+      {
+        desc = "Refresh explorer sources on focus";
+        event = "FocusGained";
+        group = "neotree";
+        callback.__raw = refresh;
       }
     ];
 

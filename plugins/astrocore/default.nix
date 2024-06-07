@@ -17,7 +17,7 @@ in
     ];
 
     config = ''
-      require('astrocore').setup({
+      require("astrocore").setup({
         diagnostics = ${helpers.toLuaObject diagnostics},
         features = ${helpers.toLuaObject features},
         options = ${helpers.toLuaObject options.astrocore},
@@ -41,5 +41,7 @@ in
     inherit (autocmds) autoGroups autoCmd;
     inherit (mappings) keymaps;
     inherit (options) opts;
+
+    plugins.which-key.registrations = mappings.mapSections;
   };
 }

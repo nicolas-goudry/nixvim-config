@@ -5,6 +5,7 @@ _:
 {
   opts = {
     enable = true;
+    icons.group = "";
     window.border = "single";
 
     # Disable which-key when in neo-tree or telescope

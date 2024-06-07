@@ -1,4 +1,6 @@
 let
+  icons = import ../astroui/icons.nix;
+
   forceWrite = {
     action = "<cmd>silent! update! | redraw<cr>";
     options.desc = "Force write";
@@ -559,7 +561,15 @@ in
     }
   ];
 
-  mapSectionsLua = ''
-
-  '';
+  mapSections = {
+    "<leader>b".name = "${icons.Tab} Buffers";
+    "<leader>bs".name = "${icons.Sort} Sort Buffers";
+    "<leader>d".name = "${icons.Debugger} Debugger";
+    "<leader>f".name = "${icons.Search} Find";
+    "<leader>g".name = "${icons.Git} Git";
+    "<leader>l".name = "${icons.ActiveLSP} Language Tools";
+    "<leader>S".name = "${icons.Session} Session";
+    "<leader>t".name = "${icons.Terminal} Terminal";
+    "<leader>u".name = "${icons.Window} UI/UX";
+  };
 }

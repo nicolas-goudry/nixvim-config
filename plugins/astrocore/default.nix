@@ -2,11 +2,9 @@
 { helpers, icons, lib, pkgs, ... }:
 
 let
-  autocmds = import ./autocmds.nix;
   diagnostics = import ./diagnostics.nix { inherit icons; };
   features = import ./features.nix;
-  mappings = import ./mappings.nix;
-  options = import ./options.nix { inherit lib; };
+  options = import ./options.nix;
   rooter = import ./rooter.nix;
   sessions = import ./sessions.nix;
 in
@@ -20,7 +18,7 @@ in
       require("astrocore").setup({
         diagnostics = ${helpers.toLuaObject diagnostics},
         features = ${helpers.toLuaObject features},
-        options = ${helpers.toLuaObject options.astrocore},
+        options = ${helpers.toLuaObject options},
         rooter = ${helpers.toLuaObject rooter},
         sessions = ${helpers.toLuaObject sessions},
         on_keys = {
@@ -35,13 +33,5 @@ in
         },
       })
     '';
-  };
-
-  rootOpts = {
-    inherit (autocmds) autoGroups autoCmd;
-    inherit (mappings) keymaps;
-    inherit (options) opts;
-
-    plugins.which-key.registrations = mappings.mapSections;
   };
 }

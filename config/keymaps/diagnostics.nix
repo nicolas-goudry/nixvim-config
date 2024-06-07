@@ -2,6 +2,7 @@
 # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_mappings.lua#L92-L100
 [
   {
+    mode = "n";
     key = "<Leader>ld";
     options.desc = "Hover diagnostics";
 
@@ -12,6 +13,7 @@
     '';
   }
   {
+    mode = "n";
     key = "[d";
     options.desc = "Previous diagnostic";
 
@@ -22,6 +24,7 @@
     '';
   }
   {
+    mode = "n";
     key = "]d";
     options.desc = "Next diagnostic";
 
@@ -32,6 +35,7 @@
     '';
   }
   {
+    mode = "n";
     key = "gl";
     options.desc = "Hover diagnostics";
 

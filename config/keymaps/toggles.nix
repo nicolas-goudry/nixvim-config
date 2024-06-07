@@ -2,6 +2,7 @@
 # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_mappings.lua#L128-L145
 [
   {
+    mode = "n";
     key = "<Leader>uA";
     options.desc = "Toggle rooter autochdir";
 
@@ -12,6 +13,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>ub";
     options.desc = "Toggle background";
 
@@ -22,6 +24,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>ud";
     options.desc = "Toggle diagnostics";
 
@@ -32,6 +35,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>ug";
     options.desc = "Toggle signcolumn";
 
@@ -42,6 +46,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>u>";
     options.desc = "Toggle foldcolumn";
 
@@ -52,6 +57,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>ui";
     options.desc = "Change indent setting";
 
@@ -62,6 +68,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>ul";
     options.desc = "Toggle statusline";
 
@@ -72,6 +79,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>un";
     options.desc = "Change line numbering";
 
@@ -82,6 +90,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>uN";
     options.desc = "Toggle Notifications";
 
@@ -92,6 +101,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>up";
     options.desc = "Toggle paste mode";
 
@@ -102,6 +112,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>us";
     options.desc = "Toggle spellcheck";
 
@@ -112,6 +123,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>uS";
     options.desc = "Toggle conceal";
 
@@ -122,6 +134,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>ut";
     options.desc = "Toggle tabline";
 
@@ -132,6 +145,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>uu";
     options.desc = "Toggle URL highlight";
 
@@ -142,6 +156,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>uw";
     options.desc = "Toggle wrap";
 
@@ -152,6 +167,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>uy";
     options.desc = "Toggle syntax highlight";
 

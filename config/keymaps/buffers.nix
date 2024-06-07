@@ -2,6 +2,7 @@
 # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/_astrocore_mappings.lua#L56-L89
 [
   {
+    mode = "n";
     key = "<leader>c";
     options.desc = "Close buffer";
 
@@ -12,6 +13,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<leader>C";
     options.desc = "Force close buffer";
 
@@ -22,6 +24,7 @@
     '';
   }
   {
+    mode = "n";
     key = "]b";
     options.desc = "Next buffer in tabline";
 
@@ -32,6 +35,7 @@
     '';
   }
   {
+    mode = "n";
     key = "[b";
     options.desc = "Previous buffer in tabline";
 
@@ -42,6 +46,7 @@
     '';
   }
   {
+    mode = "n";
     key = ">b";
     options.desc = "Move buffer tab right";
 
@@ -52,6 +57,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<b";
     options.desc = "Move buffer tab left";
 
@@ -62,6 +68,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<leader>bc";
     options.desc = "Close all buffers except current";
 
@@ -72,6 +79,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<leader>bC";
     options.desc = "Close all buffers";
 
@@ -82,6 +90,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<leader>bl";
     options.desc = "Close all buffers to the left";
 
@@ -92,6 +101,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<leader>bp";
     options.desc = "Previous buffer";
 
@@ -102,6 +112,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<leader>br";
     options.desc = "Close all buffers to the right";
 
@@ -112,6 +123,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>bse";
     options.desc = "By extension";
 
@@ -122,6 +134,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>bsr";
     options.desc = "By relative path";
 
@@ -132,6 +145,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>bsp";
     options.desc = "By full path";
 
@@ -142,6 +156,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>bsi";
     options.desc = "By buffer number";
 
@@ -152,6 +167,7 @@
     '';
   }
   {
+    mode = "n";
     key = "<Leader>bsm";
     options.desc = "By modification";
 

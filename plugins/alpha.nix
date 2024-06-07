@@ -172,6 +172,7 @@ in
 
     keymaps = [
       {
+        mode = "n";
         key = "<leader>h";
         options.desc = "Home screen";
 

@@ -33,6 +33,7 @@
 
   rootOpts.keymaps = [
     {
+      mode = "n";
       key = "<leader>ua";
       action.__raw = "function() require('astrocore.toggles').autopairs() end";
       options.desc = "Toggle autopairs";

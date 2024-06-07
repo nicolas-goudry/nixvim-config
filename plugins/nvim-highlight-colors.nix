@@ -18,6 +18,7 @@
 
   rootOpts.keymaps = [
     {
+      mode = "n";
       key = "<leader>uz";
       action = "<cmd>HighlightColors Toggle<cr>";
       options.desc = "Toggle color highlight";

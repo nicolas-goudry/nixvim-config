@@ -28,13 +28,14 @@ let
     type = "group";
     opts.spacing = 1;
 
-    # Use function defined in lua config (see below) to generate buttons
+    # Use function defined in lua config (see extra.config) to generate buttons
     val = [
-      { __raw = "alpha_button('LDR n  ', '${icons.FileNew}  New File')"; }
+      { __raw = "alpha_button('LDR S l', '${icons.Refresh}  Last Session')"; }
       { __raw = "alpha_button('LDR e  ', '${icons.FolderOpen}  Explorer')"; }
-      { __raw = "alpha_button('LDR f f', '${icons.Search}  Find File')"; }
       { __raw = "alpha_button('LDR f o', '${icons.DefaultFile}  Recents')"; }
+      { __raw = "alpha_button('LDR f f', '${icons.Search}  Find File')"; }
       { __raw = "alpha_button('LDR f g', '${icons.WordFile}  Live Grep')"; }
+      { __raw = "alpha_button('LDR n  ', '${icons.FileNew}  New File')"; }
     ];
   };
 

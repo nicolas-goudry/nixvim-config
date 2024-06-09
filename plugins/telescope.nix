@@ -118,6 +118,12 @@
           fn = "keymaps";
         }
         {
+          desc = "Find notifications";
+          key = "<leader>fn";
+          fn = "notify";
+          extension = "notify";
+        }
+        {
           desc = "Find history";
           key = "<leader>fo";
           fn = "oldfiles";

@@ -36,7 +36,7 @@
     # │    └────────────────────────────────────────┘    │
     # └──────────────────────────────────────────────────┘
     extraConfigLuaPre = ''
-      local TelescopeWithTheme = function(fn, args)
+      local TelescopeWithTheme = function(fn, args, extension)
         args.layout_config = {
           anchor = "N",
           mirror = true,
@@ -45,7 +45,13 @@
 
         if fn == "keymaps" or fn == "registers" then args.layout_config.height = function(_, _, max_lines) return max_lines end end
 
-        require("telescope.builtin")[fn](require("telescope.themes").get_dropdown(args))
+        local args_with_theme = require("telescope.themes").get_dropdown(args)
+
+        if extension ~= "" then
+          require("telescope").extensions[extension][fn](args_with_theme)
+        else
+          require("telescope.builtin")[fn](args_with_theme)
+        end
       end
     '';
 
@@ -54,14 +60,15 @@
       let
         mkTelescopeKeymap =
           { key
-          , mode ? "n"
           , fn
           , args ? { __empty = true; }
           , desc ? ""
+          , extension ? null
+          , mode ? "n"
           }: {
             inherit key mode;
 
-            action.__raw = "function() TelescopeWithTheme('${fn}', ${helpers.toLuaObject args}) end";
+            action.__raw = "function() TelescopeWithTheme('${fn}', ${helpers.toLuaObject args}, '${builtins.toString extension}') end";
             options = { inherit desc; };
           };
       in

@@ -7,7 +7,7 @@ in
 {
   extra = {
     packages = [
-      (import ./package { inherit lib pkgs; })
+      (import ./package.nix { inherit lib pkgs; })
     ];
 
     config = ''

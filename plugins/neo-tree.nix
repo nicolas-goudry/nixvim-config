@@ -92,7 +92,7 @@
           function(state)
             local node = state.tree:get_node()
             local path = node.type == "file" and node:get_parent_id() or node:get_id()
-            TelescopeWithTheme('find_files', { cwd = path })
+            TelescopeWithTheme('find_files', { cwd = path }, "")
           end
         '';
 
@@ -101,7 +101,7 @@
           function(state)
             local node = state.tree:get_node()
             local path = node.type == "file" and node:get_parent_id() or node:get_id()
-            TelescopeWithTheme('live_grep', { cwd = path })
+            TelescopeWithTheme('live_grep', { cwd = path }, "")
           end
         '';
 

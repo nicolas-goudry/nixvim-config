@@ -39,27 +39,27 @@
       }
       {
         mode = "n";
-        key = "<leader>ss";
+        key = "<leader>ls";
         action.__raw = "function() require('nvim-treesitter.incremental_selection').init_selection() end";
-        options.desc = "Start";
+        options.desc = "Start incremental selection";
       }
       {
         mode = "v";
-        key = "<leader>sd";
+        key = "<leader>ld";
         action.__raw = "function() require('nvim-treesitter.incremental_selection').node_decremental() end";
-        options.desc = "Decrement";
+        options.desc = "Decrement node selection";
       }
       {
         mode = "v";
-        key = "<leader>si";
+        key = "<leader>li";
         action.__raw = "function() require('nvim-treesitter.incremental_selection').node_incremental() end";
-        options.desc = "Increment node";
+        options.desc = "Increment node selection";
       }
       {
         mode = "v";
-        key = "<leader>sc";
+        key = "<leader>lc";
         action.__raw = "function() require('nvim-treesitter.incremental_selection').scope_incremental() end";
-        options.desc = "Increment scope";
+        options.desc = "Increment scope selection";
       }
     ];
 

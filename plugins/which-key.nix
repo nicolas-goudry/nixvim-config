@@ -23,7 +23,7 @@
       "<leader>f".name = "${icons.Search} Find";
       "<leader>g".name = "${icons.Git} Git";
       "<leader>l".name = "${icons.ActiveLSP} Language Tools";
-      "<leader>S".name = "${icons.Session} Session";
+      "<leader>s".name = "${icons.Session} Session";
       "<leader>t".name = "${icons.Terminal} Terminal";
       "<leader>u".name = "${icons.Window} UI/UX";
     };

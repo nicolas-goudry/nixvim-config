@@ -43,55 +43,55 @@
     keymaps = [
       {
         mode = "n";
-        key = "<leader>Sl";
+        key = "<leader>sl";
         action.__raw = "function() require('resession').load 'last' end";
         options.desc = "Load last session";
       }
       {
         mode = "n";
-        key = "<leader>Ss";
+        key = "<leader>ss";
         action.__raw = "function() require('resession').save() end";
         options.desc = "Save this session";
       }
       {
         mode = "n";
-        key = "<leader>SS";
+        key = "<leader>sS";
         action.__raw = "function() require('resession').save(vim.fn.getcwd(), { dir = 'dirsession' }) end";
         options.desc = "Save this dirsession";
       }
       {
         mode = "n";
-        key = "<leader>St";
+        key = "<leader>st";
         action.__raw = "function() require('resession').save_tab() end";
         options.desc = "Save this tab's session";
       }
       {
         mode = "n";
-        key = "<leader>Sd";
+        key = "<leader>sd";
         action.__raw = "function() require('resession').delete() end";
         options.desc = "Delete a session";
       }
       {
         mode = "n";
-        key = "<leader>SD";
+        key = "<leader>sD";
         action.__raw = "function() require('resession').delete(nil, { dir = 'dirsession' }) end";
         options.desc = "Delete a dirsession";
       }
       {
         mode = "n";
-        key = "<leader>Sf";
+        key = "<leader>sf";
         action.__raw = "function() require('resession').load() end";
         options.desc = "Load a session";
       }
       {
         mode = "n";
-        key = "<leader>SF";
+        key = "<leader>sF";
         action.__raw = "function() require('resession').load(nil, { dir = 'dirsession' }) end";
         options.desc = "Load a dirsession";
       }
       {
         mode = "n";
-        key = "<leader>S.";
+        key = "<leader>s.";
         action.__raw = "function() require('resession').load(vim.fn.getcwd(), { dir = 'dirsession' }) end";
         options.desc = "Load current dirsession";
       }

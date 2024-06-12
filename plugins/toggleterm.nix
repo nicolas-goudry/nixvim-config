@@ -79,5 +79,19 @@ _:
       action = "<C-\\><C-n>";
       options.desc = "Switch to normal mode";
     }
+    {
+      mode = [ "n" "t" ];
+      key = "<Leader>tn";
+      action.__raw = ''
+        function()
+          local curterm = require("toggleterm.terminal").get_focused_id()
+
+          if curterm ~= nil then
+            vim.cmd(curterm .. "ToggleTermSetName")
+          end
+        end
+      '';
+      options.desc = "Rename current terminal";
+    }
   ];
 }

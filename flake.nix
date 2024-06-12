@@ -57,7 +57,7 @@
               extraSpecialArgs = specialArgs // {
                 inherit pkgs;
 
-                icons = import ./utils/icons.nix;
+                icons = import ./utils/_icons.nix;
               };
             };
         in

@@ -4,6 +4,7 @@ _:
   imports = [
     ./config
     ./plugins
+    ./utils
   ];
 
   config = {

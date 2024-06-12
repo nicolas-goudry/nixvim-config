@@ -73,5 +73,11 @@ _:
       action = "<Esc><Cmd>ToggleTerm<CR>";
       options.desc = "Toggle terminal";
     }
+    {
+      mode = "t";
+      key = "<Esc><Esc>";
+      action = "<C-\\><C-n>";
+      options.desc = "Switch to normal mode";
+    }
   ];
 }

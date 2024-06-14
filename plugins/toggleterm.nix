@@ -94,5 +94,11 @@ _:
       '';
       options.desc = "Rename current terminal";
     }
+    {
+      mode = [ "n" "t" ];
+      key = "<Leader>tl";
+      action = "<cmd>TermSelect<cr>";
+      options.desc = "List terminals";
+    }
   ];
 }

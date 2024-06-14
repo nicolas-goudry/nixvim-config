@@ -31,7 +31,8 @@ _:
           if t.hidden then
             vim.keymap.set({ "n", "t", "i" }, "<F7>", function() t:toggle() end, { desc = "Toggle terminal", buffer = t.bufnr })
           end
-          vim.cmd(t.id .. "ToggleTermSetName " .. rndname())
+          local term_name = rndname()
+          vim.cmd(t.id .. "ToggleTermSetName " .. term_name)
         end
       '';
     };

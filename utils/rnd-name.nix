@@ -111,6 +111,7 @@
         "zealous",
         "zen",
       }
+
       local right = {
         "agnesi",
         "albattani",
@@ -350,7 +351,15 @@
         "zhukovsky",
       }
 
-      return left[math.random(0, #left)].. "_" .. right[math.random(0, #right)]
+      local li = math.random(#left)
+      local ri = math.random(#right)
+      local name = left[li] .. "_" .. right[ri]
+
+      if name == "boring_wozniak" then -- Steve Wozniak is not boring
+        return rndname.generate()
+      end
+
+      return left[li] .. "_" .. right[ri]
     end
   '';
 }

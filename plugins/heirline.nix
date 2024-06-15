@@ -10,6 +10,8 @@
     # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/configs/heirline.lua
     config = ''
       local status = require("astroui.status")
+      local screenkey = require("screenkey")
+      vim.g.screenkey_statusline_component = true
 
       require("heirline").setup({
         opts = {
@@ -32,6 +34,20 @@
           status.component.lsp(),
           status.component.virtual_env(),
           status.component.treesitter(),
+          {
+            provider = function()
+              local keys = screenkey.get_keys()
+              if keys == nil or keys == "" then
+                return
+              end
+              return "  " .. keys
+            end,
+            update = {
+              "User",
+              pattern = "Screenkey*",
+              callback = vim.schedule_wrap(function() vim.cmd("redrawstatus") end),
+            },
+          },
           status.component.nav(),
           status.component.mode { surround = { separator = "right" } },
         },

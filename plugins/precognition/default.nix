@@ -13,4 +13,13 @@
       })
     '';
   };
+
+  rootOpts.keymaps = [
+    {
+      mode = "n";
+      key = "<leader>uc";
+      action = "<cmd>Precognition toggle<cr>";
+      options.desc = "Toggle precognition";
+    }
+  ];
 }

@@ -18,7 +18,12 @@
     {
       mode = "n";
       key = "<leader>uc";
-      action = "<cmd>Precognition toggle<cr>";
+      action.__raw = ''
+        function()
+          local visible = require("precognition").toggle()
+          vim.notify(("precognition %s"):format(visible and "on" or "off"))
+        end
+      '';
       options.desc = "Toggle precognition";
     }
   ];

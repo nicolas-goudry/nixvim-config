@@ -1,0 +1,12 @@
+diff --git a/lua/precognition/init.lua b/lua/precognition/init.lua
+index b0b9d49..b057a15 100644
+--- a/lua/precognition/init.lua
++++ b/lua/precognition/init.lua
+@@ -413,6 +413,7 @@ function M.toggle()
+     else
+         M.show()
+     end
++    return visible
+ end
+ 
+ ---@param opts Precognition.PartialConfig

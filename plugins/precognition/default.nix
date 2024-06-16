@@ -4,7 +4,7 @@
 {
   extra = {
     packages = [
-      (import ./package.nix { inherit lib pkgs; })
+      (import ./package { inherit lib pkgs; })
     ];
 
     config = ''

@@ -14,4 +14,8 @@ pkgs.vimUtils.buildVimPlugin {
     rev = "v${version}";
     hash = "sha256-AqWYV/59ugKyOWALOCdycWVm0bZ7qb981xnuw/mAVzM=";
   };
+
+  patches = [
+    ./init.lua.patch
+  ];
 }
